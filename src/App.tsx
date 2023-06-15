@@ -11,7 +11,7 @@ const App: FC = () => {
 	const [recorder, setRecorder] = useState<RecordRTC | null>();
 	const [stream, setStream] = useState<MediaStream | null>();
 	const [videoBlob, setVideoBlob] = useState<Blob | null>();
-	const [modal, setModal] = useState(false);
+	const [modal, setModal] = useState<boolean>(false);
 
 	const startRecording = async () => {
 		setModal(false);
