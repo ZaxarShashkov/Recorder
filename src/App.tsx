@@ -4,6 +4,7 @@ import classes from './App.module.scss';
 import ReactPlayer from 'react-player';
 import RecordRTC, { RecordRTCPromisesHandler } from 'recordrtc';
 import { saveAs } from 'file-saver';
+import Modal from './components/Modal';
 
 const App: FC = () => {
 	const webcam = useRef<Webcam>(null);
@@ -73,25 +74,7 @@ const App: FC = () => {
 						// screenshotFormat='image/jpeg'
 					/>
 				</div>
-				{modal ? (
-					<div className={classes.modal}>
-						Do you want recording?
-						<div className={classes.app__container_buttons}>
-							<button
-								type='button'
-								className={classes.app__container_button}
-								onClick={startRecording}>
-								Yes
-							</button>
-							<button
-								type='button'
-								className={classes.app__container_button}
-								onClick={() => setModal(false)}>
-								No
-							</button>
-						</div>
-					</div>
-				) : null}
+				{modal ? <Modal setModal={setModal} startRecording={startRecording} /> : null}
 			</div>
 			<div className={classes.app__container_buttons}>
 				<button

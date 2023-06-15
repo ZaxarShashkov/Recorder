@@ -1,0 +1,33 @@
+.modal {
+	top: 145px;
+	left: 195px;
+	background-color: white;
+	text-align: center;
+	border-radius: 6px;
+	width: 250px;
+	height: 70px;
+	position: absolute;
+	color: #000;
+}
+
+.modal {
+	&__buttons {
+		display: flex;
+		margin-top: 10px;
+		gap: 30px;
+		align-items: center;
+		justify-content: space-around;
+	}
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 8px;
+		border: none;
+		font-weight: 500;
+		width: 100px;
+		height: 30px;
+		background-color: grey;
+		cursor: pointer;
+	}
+}
