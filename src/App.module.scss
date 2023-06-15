@@ -1,0 +1,57 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: black;
+}
+.app {
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 40px;
+	&__container {
+		position: relative;
+		width: 640px;
+		height: 360px;
+		&_webcam {
+			position: absolute;
+			top: 184.5px;
+			left: 440px;
+		}
+		&_buttons {
+			display: flex;
+			margin-top: 10px;
+			gap: 30px;
+			align-items: center;
+			justify-content: space-around;
+		}
+		&_button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 8px;
+			border: none;
+			font-weight: 500;
+			width: 100px;
+			height: 30px;
+			cursor: pointer;
+		}
+	}
+}
+
+.modal {
+	top: 145px;
+	left: 195px;
+	background-color: white;
+	text-align: center;
+	border-radius: 6px;
+	width: 250px;
+	height: 70px;
+	position: absolute;
+	color: #000;
+}
