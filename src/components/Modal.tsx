@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import classes from './Modal.module.scss';
+import Button from './UI/Button/Button';
 
 interface ModalProps {
 	setModal(arg: boolean): void;
@@ -11,15 +12,12 @@ const Modal: FC<ModalProps> = ({ setModal, startRecording }: ModalProps) => {
 		<div className={classes.modal}>
 			Do you want recording?
 			<div className={classes.modal__buttons}>
-				<button type='button' className={classes.modal__button} onClick={startRecording}>
-					Yes
-				</button>
-				<button
-					type='button'
+				<Button onClick={startRecording} title='Yes' className={classes.modal__button} />
+				<Button
+					onClick={() => setModal(false)}
+					title='No'
 					className={classes.modal__button}
-					onClick={() => setModal(false)}>
-					No
-				</button>
+				/>
 			</div>
 		</div>
 	);

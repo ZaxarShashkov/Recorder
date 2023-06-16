@@ -5,6 +5,7 @@ import ReactPlayer from 'react-player';
 import RecordRTC, { RecordRTCPromisesHandler } from 'recordrtc';
 import { saveAs } from 'file-saver';
 import Modal from './components/Modal';
+import Button from './components/UI/Button/Button';
 
 const App: FC = () => {
 	const webcam = useRef<Webcam>(null);
@@ -77,25 +78,22 @@ const App: FC = () => {
 				{modal ? <Modal setModal={setModal} startRecording={startRecording} /> : null}
 			</div>
 			<div className={classes.app__container_buttons}>
-				<button
-					type='button'
+				<Button
+					onClick={startRecording}
+					title='Start record'
 					className={classes.app__container_button}
-					onClick={startRecording}>
-					Start record
-				</button>
-				<button
-					type='button'
+				/>
+				<Button
+					onClick={stopRecording}
+					title='Stop record'
 					className={classes.app__container_button}
-					onClick={stopRecording}>
-					Stop record
-				</button>
-				<button
-					type='button'
-					className={classes.app__container_button}
+				/>
+				<Button
 					onClick={downloadVideo}
-					disabled={!videoBlob}>
-					Download
-				</button>
+					title='DownloadASA'
+					className={classes.app__container_button}
+					disabled={!videoBlob}
+				/>
 			</div>
 		</div>
 	);
