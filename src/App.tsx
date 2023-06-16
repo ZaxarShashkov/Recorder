@@ -90,7 +90,7 @@ const App: FC = () => {
 				/>
 				<Button
 					onClick={downloadVideo}
-					title='DownloadASA'
+					title='Download'
 					className={classes.app__container_button}
 					disabled={!videoBlob}
 				/>
